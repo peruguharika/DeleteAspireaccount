@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account - AspireBridge</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f6f8;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+        h2 {
+            color: #d32f2f;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+        input, textarea {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        input:focus, textarea:focus {
+            border-color: #0047ab;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        button {
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 15px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #b71c1c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Delete Your Account</h2>
+        <p>We're sorry to see you go. Please verify your details to request account deletion from AspireBridge.</p>
+        <form id="deleteForm" onsubmit="return handleDelete(event)">
+            <input type="text" id="name" placeholder="Enter your full name" required>
+            <input type="email" id="email" placeholder="Enter your registered email" required>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <textarea id="reason" placeholder="Why are you leaving? (Optional)"></textarea>
+            <button type="submit">Permanently Delete Account</button>
+        </form>
+    </div>
+
+    <script>
+        function handleDelete(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            // You can add API call logic here in the future
+            
+            document.body.innerHTML = `
+                <div style="text-align: center; padding: 40px; font-family: 'Segoe UI', Arial, sans-serif;">
+                    <h1 style="color: #0047ab; margin-bottom: 15px;">Request Received</h1>
+                    <p style="color: #555; font-size: 18px;">Your request to delete your AspireBridge account has been submitted.</p>
+                    <p style="color: #777;">We will process your request within 24-48 hours. You will receive a confirmation email shortly.</p>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
